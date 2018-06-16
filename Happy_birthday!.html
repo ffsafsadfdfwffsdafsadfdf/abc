@@ -1,0 +1,51 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title> BIRTHDAY </title>
+<script type="text/javascript">
+var imgAry = new Array();
+
+
+imgAry.push("img/Happy_birthday_1.jpg");
+imgAry.push("img/Happy_birthday_2.jpg");
+imgAry.push("img/Happy_birthday_3.jpg");
+
+var cur = 0;
+
+function fncChgImg(obj, pos)
+{
+    cur = pos;
+    for (var i = 0; i < imgAry.length; i++)
+    {
+        var cig = document.getElementById('img' + i);
+        if (i == pos)
+    
+            document.getElementById('rotate').src = imgAry[pos];
+    }
+}
+
+
+
+function setImg()
+{
+    cur++;
+    if (cur >= imgAry.length) cur = 0;
+    var obj = document.getElementById('img' + cur);
+    fncChgImg(obj, cur)
+    setTimeout(setImg, 1000);
+}
+</script>
+</head>
+<body>
+
+    <img id='rotate' src="img\giphy.gif">
+    <div style='position: absolute; left: 900px; top: 680px;'>
+        <img id='img0' src="img\Happy_birthday_1 - 복사본.jpg" onmouseover='fncChgImg(this,0);'>
+        <img id='img1' src="img\Happy_birthday_2 - 복사본.jpg" onmouseover='fncChgImg(this,1);'>
+        <img id='img2' src="img\Happy_birthday_3 - 복사본.jpg" onmouseover='fncChgImg(this,2);'>
+     </div>
+     <h1> If you overlay the mouse on the picture, the picture will be enlarged. </h1>
+     <h2> 18114769 HyunGiHong </h2>
+</body>
+</html>
